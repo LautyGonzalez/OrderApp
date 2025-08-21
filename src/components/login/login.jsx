@@ -15,7 +15,7 @@ function Login() {
   };
 
   return (
-    <div class="container" style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
+    <div class="container" style={{ maxWidth: "400px", margin: "auto"}}>
         <h1 class="title">OrderApp</h1>
       <h2>Iniciar sesión</h2>
       <form onSubmit={manejarLogin}>
@@ -36,6 +36,9 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             style={{ width: "100%" }}
           />
+        </div>
+        <div>
+          <p>No tienes una cuenta? <label>Registrate</label></p>
         </div>
         <button type="submit">Ingresar</button>
       </form>
