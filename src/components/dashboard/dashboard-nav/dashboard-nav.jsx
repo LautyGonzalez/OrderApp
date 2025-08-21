@@ -3,14 +3,21 @@ import "./dashboard-nav.css"
 
 function DashboardNav() {
   return (
-    <div className="Container">
-        <div>
+    <div className="container">
+        <h1 className="tittle">Order</h1>
+        <div className="navbar">
             <li>
                 <ul>
-                    Inicio
+                    <button>Inicio</button>
                 </ul>
                 <ul>
-                    Pedidos
+                    <button>Pedidos</button>
+                </ul>
+                <ul>
+                    <button>Sucursales</button>
+                </ul>
+                <ul>
+                    <button>Menu</button>
                 </ul>
             </li>
         </div>
