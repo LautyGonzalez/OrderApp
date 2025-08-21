@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./login.css"
 
-function Login() {
+function Login({ onLogin }) {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,11 +12,12 @@ function Login() {
       return;
     }
     alert(`Iniciaste sesión como ${usuario}`);
+    onLogin();
   };
 
   return (
-    <div class="container" style={{ maxWidth: "400px", margin: "auto"}}>
-        <h1 class="title">OrderApp</h1>
+    <div className="container" style={{ maxWidth: "400px", margin: "auto" }}>
+      <h1 className="title">OrderApp</h1>
       <h2>Iniciar sesión</h2>
       <form onSubmit={manejarLogin}>
         <div style={{ marginBottom: "10px" }}>
@@ -38,9 +39,9 @@ function Login() {
           />
         </div>
         <div>
+          <button type="submit">Iniciar sesión</button>
           <p>No tienes una cuenta? <label>Registrate</label></p>
         </div>
-        <button type="submit">Ingresar</button>
       </form>
     </div>
   );
