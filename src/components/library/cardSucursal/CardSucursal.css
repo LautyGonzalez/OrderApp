@@ -1,0 +1,41 @@
+.card-sucursal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 0.8rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.card-sucursal:hover {
+  transform: scale(1.05);
+}
+
+.card-sucursal h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-sucursal p {
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+.estado {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.estado.abierto {
+  color: #0a0;
+  background: #e6ffe6;
+}
+
+.estado.cerrado {
+  color: #a00;
+  background: #ffe6e6;
+}

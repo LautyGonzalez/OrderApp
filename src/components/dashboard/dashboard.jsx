@@ -6,10 +6,6 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <DashboardNav />
-      <div className="dashboard-content">
-        <h1>OrderApp</h1>
-        <p>Aquí va el contenido del dashboard...</p>
-      </div>
     </div>
   );
 }

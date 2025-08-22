@@ -1,18 +1,41 @@
 import { useState } from "react";
-import "./login.css"
+import { useNavigate } from "react-router-dom";
+import usuarios from "./dataUsuarios";
+import "./login.css";
 
-function Login({ onLogin, onSwitchToRegister }) {
+function Login({ onSwitchToRegister }) {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const manejarLogin = (e) => {
     e.preventDefault();
+
     if (usuario === "" || password === "") {
       alert("Por favor completá ambos campos");
       return;
     }
-    alert(`Iniciaste sesión como ${usuario}`);
-    onLogin();
+
+
+    const user = usuarios.find(
+      (u) => u.usuario === usuario && u.password === password
+    );
+
+    if (!user) {
+      alert("Usuario o contraseña incorrectos");
+      return;
+    }
+
+    alert(`Bienvenido ${user.usuario} (${user.rol})`);
+
+
+    if (user.rol === "superadmin") {
+      navigate("/superadmin");
+    } else if (user.rol === "admin") {
+      navigate("/admin");
+    } else if (user.rol === "empleado") {
+      navigate("/empleado");
+    }
   };
 
   return (
@@ -43,7 +66,8 @@ function Login({ onLogin, onSwitchToRegister }) {
           <p>
             No tienes una cuenta?{" "}
             <a
-              href="#" onClick={(e) => {
+              href="#"
+              onClick={(e) => {
                 e.preventDefault();
                 onSwitchToRegister();
               }}
