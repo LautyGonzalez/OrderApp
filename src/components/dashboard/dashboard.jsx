@@ -4,13 +4,12 @@ import "./dashboard.css"
 
 const Dashboard = () => {
   return (
-    <div>
-        <h1 class="title">OrderApp</h1>
-        <DashboardNav/>
-        <div>
-            
-        </div>
-      
+    <div className="dashboard">
+      <DashboardNav />
+      <div className="dashboard-content">
+        <h1>OrderApp</h1>
+        <p>Aquí va el contenido del dashboard...</p>
+      </div>
     </div>
   );
 }

@@ -1,27 +1,24 @@
 import { useState } from "react";
 import "./dashboard-nav.css"
+import { Menu, X } from "lucide-react";
 
-function DashboardNav() {
+const DashboardNav= () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="container">
-        <h1 className="tittle">Order</h1>
-        <div className="navbar">
-            <li>
-                <ul>
-                    <button>Inicio</button>
-                </ul>
-                <ul>
-                    <button>Pedidos</button>
-                </ul>
-                <ul>
-                    <button>Sucursales</button>
-                </ul>
-                <ul>
-                    <button>Menu</button>
-                </ul>
-            </li>
-        </div>
-      
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      {/* Botón hamburguesa */}
+      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <nav className="nav-links">
+        <button>Inicio</button>
+        <button>Pedidos</button>
+        <button>Sucursales</button>
+        <button>Menú</button>
+      </nav>
     </div>
   );
 }
