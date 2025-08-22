@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./login.css"
 
-function Login({ onLogin }) {
+function Login({ onLogin, onSwitchToRegister }) {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,7 +16,7 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "400px", margin: "auto" }}>
+    <div className="container" style={{ maxWidth: "300px", margin: "auto" }}>
       <h1 className="title">OrderApp</h1>
       <h2>Iniciar sesión</h2>
       <form onSubmit={manejarLogin}>
@@ -40,7 +40,17 @@ function Login({ onLogin }) {
         </div>
         <div>
           <button type="submit">Iniciar sesión</button>
-          <p>No tienes una cuenta? <label>Registrate</label></p>
+          <p>
+            No tienes una cuenta?{" "}
+            <a
+              href="#" onClick={(e) => {
+                e.preventDefault();
+                onSwitchToRegister();
+              }}
+            >
+              Registrate
+            </a>
+          </p>
         </div>
       </form>
     </div>
